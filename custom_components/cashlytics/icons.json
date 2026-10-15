@@ -1,0 +1,32 @@
+{
+  "entity": {
+    "sensor": {
+      "total_assets": { "default": "mdi:bank" },
+      "month_income": { "default": "mdi:cash-plus" },
+      "month_expenses": { "default": "mdi:cash-minus" },
+      "month_surplus": { "default": "mdi:scale-balance" },
+      "income_change": { "default": "mdi:trending-up" },
+      "expenses_change": { "default": "mdi:trending-down" },
+      "fixed_costs": { "default": "mdi:repeat" },
+      "subscriptions": { "default": "mdi:playlist-check" },
+      "upcoming_payments": { "default": "mdi:calendar-arrow-right" },
+      "next_payment": { "default": "mdi:calendar-clock" },
+      "forecast_balance": { "default": "mdi:chart-timeline-variant" },
+      "unread_insights": { "default": "mdi:lightbulb-alert-outline" },
+      "account_balance": { "default": "mdi:wallet" },
+      "account_forecast_balance": { "default": "mdi:chart-line" },
+      "account_next_month_net": { "default": "mdi:swap-vertical" }
+    },
+    "binary_sensor": {
+      "payment_due_today": { "default": "mdi:cash-clock", "state": { "off": "mdi:cash-check" } },
+      "payment_due_tomorrow": { "default": "mdi:cash-clock", "state": { "off": "mdi:cash-check" } },
+      "month_deficit": { "default": "mdi:alert-circle-outline" },
+      "spending_anomaly": { "default": "mdi:chart-bell-curve" },
+      "budget_warning": { "default": "mdi:speedometer" },
+      "negative_balance": { "default": "mdi:minus-circle-outline" }
+    },
+    "calendar": {
+      "payments": { "default": "mdi:calendar-month" }
+    }
+  }
+}

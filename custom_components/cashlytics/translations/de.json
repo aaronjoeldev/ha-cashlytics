@@ -1,0 +1,151 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Cashlytics",
+        "description": "Verbinde deine Cashlytics-Instanz. Den API-Token erstellst du in Cashlytics unter Einstellungen → API-Tokens & Integrationen.",
+        "data": {
+          "url": "URL",
+          "api_token": "API-Token",
+          "verify_ssl": "SSL-Zertifikat prüfen"
+        },
+        "data_description": {
+          "url": "Adresse deiner Cashlytics-Instanz inklusive Protokoll und Port",
+          "api_token": "Persönlicher Token, beginnt mit csk_",
+          "verify_ssl": "Bei selbstsignierten Zertifikaten deaktivieren"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Neuer API-Token",
+        "description": "Der API-Token für {url} wurde abgelehnt, ist abgelaufen oder wurde widerrufen. Erstelle in Cashlytics einen neuen Token.",
+        "data": {
+          "api_token": "API-Token"
+        }
+      },
+      "reconfigure": {
+        "title": "Verbindung ändern",
+        "data": {
+          "url": "URL",
+          "api_token": "API-Token",
+          "verify_ssl": "SSL-Zertifikat prüfen"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Verbindung fehlgeschlagen. Prüfe URL und Netzwerk.",
+      "invalid_auth": "Der API-Token ist ungültig, abgelaufen oder widerrufen.",
+      "not_supported": "Unter dieser URL läuft keine kompatible Cashlytics-Version. Die Integration braucht Cashlytics mit REST API v1.",
+      "unknown": "Unerwarteter Fehler"
+    },
+    "abort": {
+      "already_configured": "Dieser Cashlytics-Nutzer ist bereits eingerichtet.",
+      "reauth_successful": "Der neue Token wurde gespeichert.",
+      "reconfigure_successful": "Die Verbindung wurde geändert.",
+      "wrong_account": "Der Token gehört zu einem anderen Cashlytics-Nutzer."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "scan_interval": "Abfrageintervall",
+          "upcoming_days": "Zeitraum anstehender Zahlungen",
+          "forecast_months": "Prognosezeitraum"
+        },
+        "data_description": {
+          "scan_interval": "Minuten zwischen zwei Abfragen",
+          "upcoming_days": "Tage, die der Sensor „Anstehende Zahlungen“ umfasst",
+          "forecast_months": "Monate für die Prognose-Sensoren"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "total_assets": {
+        "name": "Gesamtvermögen"
+      },
+      "month_income": {
+        "name": "Einnahmen diesen Monat"
+      },
+      "month_expenses": {
+        "name": "Ausgaben diesen Monat"
+      },
+      "month_surplus": {
+        "name": "Überschuss diesen Monat"
+      },
+      "income_change": {
+        "name": "Einnahmen ggü. Vormonat"
+      },
+      "expenses_change": {
+        "name": "Ausgaben ggü. Vormonat"
+      },
+      "fixed_costs": {
+        "name": "Fixkosten pro Monat"
+      },
+      "subscriptions": {
+        "name": "Abos pro Monat"
+      },
+      "upcoming_payments": {
+        "name": "Anstehende Zahlungen"
+      },
+      "next_payment": {
+        "name": "Nächste Zahlung"
+      },
+      "forecast_balance": {
+        "name": "Prognostizierte Bilanz"
+      },
+      "unread_insights": {
+        "name": "Ungelesene Hinweise"
+      },
+      "account_balance": {
+        "name": "Kontostand"
+      },
+      "account_forecast_balance": {
+        "name": "Prognostizierter Kontostand"
+      },
+      "account_next_month_net": {
+        "name": "Saldo nächster Monat"
+      }
+    },
+    "binary_sensor": {
+      "payment_due_today": {
+        "name": "Zahlung heute fällig"
+      },
+      "payment_due_tomorrow": {
+        "name": "Zahlung morgen fällig"
+      },
+      "month_deficit": {
+        "name": "Defizit diesen Monat"
+      },
+      "spending_anomaly": {
+        "name": "Auffällige Ausgaben"
+      },
+      "budget_warning": {
+        "name": "Budgetwarnung"
+      },
+      "negative_balance": {
+        "name": "Negativer Kontostand"
+      }
+    },
+    "calendar": {
+      "payments": {
+        "name": "Zahlungen"
+      }
+    }
+  },
+  "exceptions": {
+    "invalid_auth": {
+      "message": "Der API-Token wurde von Cashlytics abgelehnt."
+    },
+    "rate_limited": {
+      "message": "Cashlytics begrenzt gerade die Anfragen."
+    },
+    "update_failed": {
+      "message": "Abruf von Cashlytics fehlgeschlagen: {error}"
+    },
+    "calendar_failed": {
+      "message": "Zahlungen konnten nicht geladen werden: {error}"
+    }
+  }
+}

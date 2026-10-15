@@ -1,0 +1,151 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Cashlytics",
+        "description": "Connect your Cashlytics instance. Create the API token in Cashlytics under Settings → API tokens & integrations.",
+        "data": {
+          "url": "URL",
+          "api_token": "API token",
+          "verify_ssl": "Verify SSL certificate"
+        },
+        "data_description": {
+          "url": "Address of your Cashlytics instance including protocol and port",
+          "api_token": "Personal token starting with csk_",
+          "verify_ssl": "Disable for self-signed certificates"
+        }
+      },
+      "reauth_confirm": {
+        "title": "New API token",
+        "description": "The API token for {url} was rejected, has expired or was revoked. Create a new token in Cashlytics.",
+        "data": {
+          "api_token": "API token"
+        }
+      },
+      "reconfigure": {
+        "title": "Change connection",
+        "data": {
+          "url": "URL",
+          "api_token": "API token",
+          "verify_ssl": "Verify SSL certificate"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect. Check the URL and the network.",
+      "invalid_auth": "The API token is invalid, expired or revoked.",
+      "not_supported": "No compatible Cashlytics version runs at this URL. The integration needs Cashlytics with REST API v1.",
+      "unknown": "Unexpected error"
+    },
+    "abort": {
+      "already_configured": "This Cashlytics user is already configured.",
+      "reauth_successful": "The new token was saved.",
+      "reconfigure_successful": "The connection was changed.",
+      "wrong_account": "The token belongs to another Cashlytics user."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "scan_interval": "Polling interval",
+          "upcoming_days": "Upcoming payments window",
+          "forecast_months": "Forecast period"
+        },
+        "data_description": {
+          "scan_interval": "Minutes between two polls",
+          "upcoming_days": "Days covered by the upcoming payments sensor",
+          "forecast_months": "Months for the forecast sensors"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "total_assets": {
+        "name": "Total assets"
+      },
+      "month_income": {
+        "name": "Income this month"
+      },
+      "month_expenses": {
+        "name": "Expenses this month"
+      },
+      "month_surplus": {
+        "name": "Surplus this month"
+      },
+      "income_change": {
+        "name": "Income vs. last month"
+      },
+      "expenses_change": {
+        "name": "Expenses vs. last month"
+      },
+      "fixed_costs": {
+        "name": "Fixed costs per month"
+      },
+      "subscriptions": {
+        "name": "Subscriptions per month"
+      },
+      "upcoming_payments": {
+        "name": "Upcoming payments"
+      },
+      "next_payment": {
+        "name": "Next payment"
+      },
+      "forecast_balance": {
+        "name": "Forecast balance"
+      },
+      "unread_insights": {
+        "name": "Unread insights"
+      },
+      "account_balance": {
+        "name": "Balance"
+      },
+      "account_forecast_balance": {
+        "name": "Forecast balance"
+      },
+      "account_next_month_net": {
+        "name": "Net next month"
+      }
+    },
+    "binary_sensor": {
+      "payment_due_today": {
+        "name": "Payment due today"
+      },
+      "payment_due_tomorrow": {
+        "name": "Payment due tomorrow"
+      },
+      "month_deficit": {
+        "name": "Deficit this month"
+      },
+      "spending_anomaly": {
+        "name": "Spending anomaly"
+      },
+      "budget_warning": {
+        "name": "Budget warning"
+      },
+      "negative_balance": {
+        "name": "Negative balance"
+      }
+    },
+    "calendar": {
+      "payments": {
+        "name": "Payments"
+      }
+    }
+  },
+  "exceptions": {
+    "invalid_auth": {
+      "message": "The API token was rejected by Cashlytics."
+    },
+    "rate_limited": {
+      "message": "Cashlytics is rate limiting requests."
+    },
+    "update_failed": {
+      "message": "Fetching data from Cashlytics failed: {error}"
+    },
+    "calendar_failed": {
+      "message": "Payments could not be loaded: {error}"
+    }
+  }
+}
